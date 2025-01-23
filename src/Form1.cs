@@ -1,7 +1,10 @@
 using System;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
-namespace GeneradorDeContrasenas
+namespace Generadordecontrasenas
 {
     public partial class Form1 : Form
     {
@@ -37,6 +40,24 @@ namespace GeneradorDeContrasenas
             }
 
             return new string(contrasena);
+        }
+
+        private string GenerarPbkdf2Contrasena(int longitud, int iteraciones, KeyDerivationPrf prf)
+        {
+            byte[] salt = new byte[128 / 8];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(salt);
+            }
+
+            string contrasena = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: "password", // Puedes usar una cadena aleatoria aquí
+                salt: salt,
+                prf: prf,
+                iterationCount: iteraciones,
+                numBytesRequested: longitud));
+
+            return contrasena;
         }
 
         private void btnCopiar_Click(object sender, EventArgs e)

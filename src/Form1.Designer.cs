@@ -2,15 +2,8 @@ namespace Generadordecontrasenas
 {
     partial class Form1
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,19 +15,18 @@ namespace Generadordecontrasenas
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.labelTitle = new System.Windows.Forms.Label();
-            this.numericUpDownLength = new System.Windows.Forms.NumericUpDown();
-            this.labelLength = new System.Windows.Forms.Label();
-            this.buttonGenerate = new System.Windows.Forms.Button();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.buttonCopy = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLength)).BeginInit();
+            this.numericLongitud = new System.Windows.Forms.NumericUpDown();
+            this.numericIteraciones = new System.Windows.Forms.NumericUpDown();
+            this.labelLongitud = new System.Windows.Forms.Label();
+            this.labelIteraciones = new System.Windows.Forms.Label();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.btnCopiar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numericLongitud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericIteraciones)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -47,77 +39,111 @@ namespace Generadordecontrasenas
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Generador de contraseñas";
             // 
-            // numericUpDownLength
+            // numericLongitud
             // 
-            this.numericUpDownLength.Location = new System.Drawing.Point(16, 55);
-            this.numericUpDownLength.Maximum = new decimal(new int[] {
+            this.numericLongitud.Location = new System.Drawing.Point(16, 55);
+            this.numericLongitud.Maximum = new decimal(new int[] {
             129,
             0,
             0,
             0});
-            this.numericUpDownLength.Minimum = new decimal(new int[] {
+            this.numericLongitud.Minimum = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.numericUpDownLength.Name = "numericUpDownLength";
-            this.numericUpDownLength.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDownLength.TabIndex = 1;
-            this.numericUpDownLength.Value = new decimal(new int[] {
+            this.numericLongitud.Name = "numericLongitud";
+            this.numericLongitud.Size = new System.Drawing.Size(120, 20);
+            this.numericLongitud.TabIndex = 1;
+            this.numericLongitud.Value = new decimal(new int[] {
             8,
             0,
             0,
             0});
             // 
-            // labelLength
+            // numericIteraciones
             // 
-            this.labelLength.AutoSize = true;
-            this.labelLength.Location = new System.Drawing.Point(13, 39);
-            this.labelLength.Name = "labelLength";
-            this.labelLength.Size = new System.Drawing.Size(97, 13);
-            this.labelLength.TabIndex = 2;
-            this.labelLength.Text = "Longitud de la contraseña:";
+            this.numericIteraciones.Location = new System.Drawing.Point(16, 105);
+            this.numericIteraciones.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericIteraciones.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericIteraciones.Name = "numericIteraciones";
+            this.numericIteraciones.Size = new System.Drawing.Size(120, 20);
+            this.numericIteraciones.TabIndex = 2;
+            this.numericIteraciones.Value = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             // 
-            // buttonGenerate
+            // labelLongitud
             // 
-            this.buttonGenerate.Location = new System.Drawing.Point(16, 81);
-            this.buttonGenerate.Name = "buttonGenerate";
-            this.buttonGenerate.Size = new System.Drawing.Size(120, 23);
-            this.buttonGenerate.TabIndex = 3;
-            this.buttonGenerate.Text = "Generar Contraseña";
-            this.buttonGenerate.UseVisualStyleBackColor = true;
-            this.buttonGenerate.Click += new System.EventHandler(this.ButtonGenerate_Click);
+            this.labelLongitud.AutoSize = true;
+            this.labelLongitud.Location = new System.Drawing.Point(13, 39);
+            this.labelLongitud.Name = "labelLongitud";
+            this.labelLongitud.Size = new System.Drawing.Size(97, 13);
+            this.labelLongitud.TabIndex = 3;
+            this.labelLongitud.Text = "Longitud de la contraseña:";
             // 
-            // textBoxPassword
+            // labelIteraciones
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(16, 110);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.ReadOnly = true;
-            this.textBoxPassword.Size = new System.Drawing.Size(256, 20);
-            this.textBoxPassword.TabIndex = 4;
+            this.labelIteraciones.AutoSize = true;
+            this.labelIteraciones.Location = new System.Drawing.Point(13, 89);
+            this.labelIteraciones.Name = "labelIteraciones";
+            this.labelIteraciones.Size = new System.Drawing.Size(123, 13);
+            this.labelIteraciones.TabIndex = 4;
+            this.labelIteraciones.Text = "Número de iteraciones:";
             // 
-            // buttonCopy
+            // btnGenerar
             // 
-            this.buttonCopy.Location = new System.Drawing.Point(197, 136);
-            this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(75, 23);
-            this.buttonCopy.TabIndex = 5;
-            this.buttonCopy.Text = "Copiar";
-            this.buttonCopy.UseVisualStyleBackColor = true;
-            this.buttonCopy.Click += new System.EventHandler(this.ButtonCopy_Click);
+            this.btnGenerar.Location = new System.Drawing.Point(16, 131);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(120, 23);
+            this.btnGenerar.TabIndex = 5;
+            this.btnGenerar.Text = "Generar Contraseña";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(16, 160);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.ReadOnly = true;
+            this.txtContrasena.Size = new System.Drawing.Size(256, 20);
+            this.txtContrasena.TabIndex = 6;
+            // 
+            // btnCopiar
+            // 
+            this.btnCopiar.Location = new System.Drawing.Point(197, 186);
+            this.btnCopiar.Name = "btnCopiar";
+            this.btnCopiar.Size = new System.Drawing.Size(75, 23);
+            this.btnCopiar.TabIndex = 7;
+            this.btnCopiar.Text = "Copiar";
+            this.btnCopiar.UseVisualStyleBackColor = true;
+            this.btnCopiar.Click += new System.EventHandler(this.btnCopiar_Click);
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(284, 171);
-            this.Controls.Add(this.buttonCopy);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.buttonGenerate);
-            this.Controls.Add(this.labelLength);
-            this.Controls.Add(this.numericUpDownLength);
+            this.ClientSize = new System.Drawing.Size(284, 221);
+            this.Controls.Add(this.btnCopiar);
+            this.Controls.Add(this.txtContrasena);
+            this.Controls.Add(this.btnGenerar);
+            this.Controls.Add(this.labelIteraciones);
+            this.Controls.Add(this.labelLongitud);
+            this.Controls.Add(this.numericIteraciones);
+            this.Controls.Add(this.numericLongitud);
             this.Controls.Add(this.labelTitle);
             this.Name = "Form1";
             this.Text = "Generador de contraseñas";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericLongitud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericIteraciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -125,10 +151,12 @@ namespace Generadordecontrasenas
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.NumericUpDown numericUpDownLength;
-        private System.Windows.Forms.Label labelLength;
-        private System.Windows.Forms.Button buttonGenerate;
-        private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.Button buttonCopy;
+        private System.Windows.Forms.NumericUpDown numericLongitud;
+        private System.Windows.Forms.NumericUpDown numericIteraciones;
+        private System.Windows.Forms.Label labelLongitud;
+        private System.Windows.Forms.Label labelIteraciones;
+        private System.Windows.Forms.Button btnGenerar;
+        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.Button btnCopiar;
     }
 }
